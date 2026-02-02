@@ -1,10 +1,9 @@
-#utils:
 import pandas as pd
-from pandas import DataFrame
-from pandas.api.types import is_numeric_dtype
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sb
+from pandas import DataFrame
+from pandas.api.types import is_numeric_dtype
 from sklearn.decomposition import PCA
 
 def nan_replace(df):
@@ -38,12 +37,13 @@ n, m = x.shape
 model_acp = PCA() 
 model_acp.fit(x) 
 
+#variantele componentelor principale
 alpha = model_acp.explained_variance_
 print("alpha", alpha)
 
 a = model_acp.components_
 
-#componentele principale rezultate in urma acp
+#componentele principale rezultate in urma acp (scoruri)
 c = model_acp.transform(x)
 
 # afisarea componentelor principale
