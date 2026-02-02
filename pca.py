@@ -35,7 +35,7 @@ x_orig = t[variabile_observate]
 x = (x_orig - np.mean(x_orig, axis=0)) / np.std(x_orig, axis=0)
 n, m = x.shape
 
-odel_acp = PCA() 
+model_acp = PCA() 
 model_acp.fit(x) 
 
 alpha = model_acp.explained_variance_
@@ -76,7 +76,7 @@ print("Comp principale semnificative conform crit Cattel: ", nr_comp_s_cattel)
 ponderi = np.cumsum(alpha / sum(alpha))
 conditie = np.where(ponderi > 0.8)
 nr_comp_s_procent = conditie[0][0] + 1
-print("Comp principale semnificative cf crit procent de acoperire: ", nr_comp_s_procent)
+print("Comp principale semnificative: ", nr_comp_s_procent)
 
 # calcul corelatii intre variabilele initiale si componentele principale
 
