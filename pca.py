@@ -13,9 +13,6 @@ def nan_replace(df):
             if is_numeric_dtype(df[col]):
                 df[col].fillna(df[col].mean(), inplace=True)
             else:
-                # outputul metodei mode() arata similar cu:
-                # 0 abc
-                # 1 def
                 modul = df[col].mode()
                 df[col].fillna(modul[0], inplace=True)
 
@@ -26,7 +23,6 @@ def to_dataframe(x, nume_randuri=None, nume_coloane=None, nume_fisier=None):
         df.to_csv(nume_fisier)
 
     return df
-
 
 #main
 
